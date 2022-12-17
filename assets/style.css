@@ -3,6 +3,11 @@ html{
     color:rgb(231, 242, 252);
 }
 
+header{
+    position: relative;
+    z-index: 1;
+}
+
 header div{
     position: inherit;
     display: flex;
@@ -22,6 +27,39 @@ header a{
 main div{
     position: relative;
     display: flex;
-    margin: 60px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 75vw;
+    margin: auto;
+    margin-top: 25px;
     justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    background-color: rgb(245, 239, 232);
+    padding-bottom: 5px;
+    border-radius: 5px;
+    color: black;
+}
+
+main div h2{
+    font-size:40px;
+}
+
+a div{
+    background-color:rgb(255, 115, 0);
+    margin:5px;
+    padding: 10px;
+    width: fit-content;
+    color:black;
+}
+
+#title-timer{
+    display: flex;
+    flex-direction: row;
+    gap: 170px;
+    margin:auto;
+}
+
+#questionBox{
+    margin-top:auto;
 }
