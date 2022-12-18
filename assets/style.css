@@ -1,3 +1,7 @@
+*{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
 html{
     background-color: rgb(60, 66, 78);
     color:rgb(231, 242, 252);
@@ -61,5 +65,13 @@ a div{
 }
 
 #questionBox{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 50px;
     margin-top:auto;
+}
+
+a:link, a:visited{
+    text-decoration: none;
 }
