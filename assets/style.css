@@ -49,13 +49,14 @@ main div h2{
     font-size:40px;
 }
 
-a div{
+/* a div{
     background-color:rgb(255, 115, 0);
     margin:5px;
     padding: 10px;
     width: fit-content;
     color:black;
-}
+    border: 2px black solid;
+} */
 
 #title-timer{
     display: flex;
@@ -72,6 +73,26 @@ a div{
     margin-top:auto;
 }
 
-a:link, a:visited{
+/* a:link, a:visited{
     text-decoration: none;
+}
+
+a div:hover{
+    background-color: rgb(74, 74, 156);
+    color: rgb(245, 239, 232) ;
+} */
+
+#startButton, #answerChoice1, #answerChoice2, #answerChoice3, #answerChoice4{
+    background-color:rgb(255, 115, 0);
+    margin:5px;
+    padding: 10px;
+    width: fit-content;
+    color:black;
+    border: 2px black solid;
+}
+
+#startButton:hover, #answerChoice1:hover, #answerChoice2:hover, #answerChoice3:hover, #answerChoice4:hover{
+    background-color: rgb(74, 74, 156);
+    color: rgb(245, 239, 232) ;
+    cursor: pointer;
 }
