@@ -28,8 +28,11 @@
         console.log('Starting Quiz');
         event.preventDefault();
         hideStartBtn();
+        event.preventDefault();
         startTimer();
+        event.preventDefault();
         startQuiz();
+        event.preventDefault();
     }
 
 //Hides the start button
@@ -90,12 +93,9 @@ function startQuiz(){
             text2.textContent = "asdf";
             text3.textContent = "asdf";
             text4.textContent = "asdf";
+        }
     //Event listeners for the answer boxes
-            answerChoice1.addEventListener("click", function(event){
-                event.stopPropogation();
-
-                console.log("yuhhhh")
-            });
+            answerChoice1.addEventListener("click", console.log('eventListener'));
             // text2.addEventListener("click", function(event));
             // text3.addEventListener("click", function(event));
             // text4.addEventListener("click", function(event));
@@ -106,10 +106,8 @@ function startQuiz(){
             //Contains (answer)
             //Answer = Boolean
             //if <answerChoice> correct, else wrong -- maybe best bet?
-        }
+        
 
 
 
 }
-
-    
