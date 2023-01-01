@@ -68,16 +68,21 @@ function startQuiz(){
             answerChoice3.addEventListener("click", checkAnswer1);
             answerChoice4.addEventListener("click", checkAnswer1);
         }            
+    
     }
     //verifies the answer of question 1
     function checkAnswer1(event) {
         if(event.target !== answerChoice3) {
-            console.log("Incorrect -2 seconds ");
+            console.log("Answer 1 Incorrect -2 seconds ");
             secondsLeft --;
         } else {
             console.log("Correct! ");
         //insert points to local storage
         }
+        answerChoice1.removeEventListener('click', checkAnswer1);
+        answerChoice2.removeEventListener('click', checkAnswer1);
+        answerChoice3.removeEventListener('click', checkAnswer1);
+        answerChoice4.removeEventListener('click', checkAnswer1);
         question2();
     }
 
@@ -107,12 +112,16 @@ function startQuiz(){
     //verifies the answer of question 2
     function checkAnswer2(event) {
         if(event.target !== answerChoice1) {
-            console.log("Incorrect -2 seconds ");
+            console.log("Answer 2 Incorrect -2 seconds ");
             secondsLeft --;
             } else {
             console.log("Correct! ");
             //insert points to local storage        
         }
+        answerChoice1.removeEventListener('click', checkAnswer2);
+        answerChoice2.removeEventListener('click', checkAnswer2);
+        answerChoice3.removeEventListener('click', checkAnswer2);
+        answerChoice4.removeEventListener('click', checkAnswer2);
         question3();
     }
     function question3() {
@@ -145,8 +154,12 @@ function startQuiz(){
             secondsLeft --;
             } else {
             console.log("Correct! ");
-            //insert points to local storage            
+            //insert points to local storage
         }
+        answerChoice1.removeEventListener('click', checkAnswer3);
+        answerChoice2.removeEventListener('click', checkAnswer3);
+        answerChoice3.removeEventListener('click', checkAnswer3);
+        answerChoice4.removeEventListener('click', checkAnswer3);
         question4();
     }
     function question4(){
@@ -181,7 +194,10 @@ function startQuiz(){
             console.log("Correct! ");
             //insert points to local storage            
         }
-
+        answerChoice1.removeEventListener('click', checkAnswer4);
+        answerChoice2.removeEventListener('click', checkAnswer4);
+        answerChoice3.removeEventListener('click', checkAnswer4);
+        answerChoice4.removeEventListener('click', checkAnswer4);
         question5();
     }
     function question5(){
@@ -216,6 +232,10 @@ function startQuiz(){
             console.log("Correct! ");
             //insert points to local storage                   
         }
+        answerChoice1.removeEventListener('click', checkAnswer5);
+        answerChoice2.removeEventListener('click', checkAnswer5);
+        answerChoice3.removeEventListener('click', checkAnswer5);
+        answerChoice4.removeEventListener('click', checkAnswer5);
         endScreen();
     }
 }
@@ -246,5 +266,22 @@ function startTimer() {
 }
 //End screen
 function endScreen(){
-    console.log("hold on man im getting there")
+    console.log("hold on man im getting there");
+    //Hiding all of the elements
+    document.querySelector('#answerChoice1').style.display = 'none';
+    document.querySelector('#answerChoice2').style.display = 'none';
+    document.querySelector('#answerChoice3').style.display = 'none';
+    document.querySelector('#answerChoice4').style.display = 'none';
+    document.querySelector('#timeLeft').style.display = 'none';
+    document.querySelector('#question').style.display = 'none';
+    document.querySelector('#startButton').style.display = 'none';
+    document.querySelector('#h2El').textContent = "High Scores";
+    scoreScreen;
+}
+
+function scoreScreen() {
+    const para = document.createElement('p');
+    const paraText = document.createTextNode("asdf");
+    para.appendChild(paraText);
+    questionBox.appendChild(para);
 }
