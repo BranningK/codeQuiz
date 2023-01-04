@@ -31,9 +31,10 @@ header a{
 main div{
     position: relative;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex-direction: column;
     width: 75vw;
+    height: auto;
     margin: auto;
     margin-top: 25px;
     justify-content: center;
@@ -69,7 +70,6 @@ main div h2{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    gap: 50px;
     margin-top:auto;
 }
 
