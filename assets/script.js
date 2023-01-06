@@ -295,6 +295,29 @@ function endScreen(){
 
 function scoreScreen() {
     console.log("running scoreScreen");
+
+    // Go Grab the data saved in localstorage
+   // console.log(userScores);
+   // console.log(typeof userScores);
+
+    var json = localStorage.getItem('userScores');
+    console.log(json);
+    console.log(typeof json);
+    // convert data to JavaScript OBJECT type
+    var jsArr = JSON.parse(json);
+    console.log(jsArr);
+    console.log(typeof jsArr);
+
+    //console.log(jsArr.sort({time}))
+    //console.log(Math.max(jsArr))
+
+    // for(var i = 0; i < 5; i++ ) {
+        // create an new <li>
+        // add any attributes or classes / styling
+        // add the TEXT CONTENT
+        // Append/Add to the DOM
+    //}
+
     //Score div styling
     scoreDiv = document.createElement("div");
     scoreDiv.setAttribute("id", 'scoreDiv');
@@ -323,11 +346,11 @@ function scoreScreen() {
     olEl1.appendChild(liEl4);
     olEl1.appendChild(liEl5);
     nameHeading.textContent = "Name: ";
-    liEl1.textContent = storedScores;
-    liEl2.textContent = "";
-    liEl3.textContent = "";
-    liEl4.textContent = "";
-    liEl5.textContent = "";
+    liEl1.textContent = jsArr[0].name;
+    liEl2.textContent = jsArr[1].name;
+    liEl3.textContent = jsArr[2].name;
+    liEl4.textContent = jsArr[3].name;
+    liEl5.textContent = jsArr[4] ? jsArr[4].name : '';
     //score column
     var timeHeading = document.createElement("p");
     var ulEl2 = document.createElement("ul");
@@ -345,7 +368,7 @@ function scoreScreen() {
     ulEl2.appendChild(liEl10);
     timeHeading.textContent = "Time Remaining: "
     liEl6.textContent = secondsLeft + " seconds left";
-    liEl7.textContent = "";
+    liEl7.textContent = jsArr[1].time + " points";
     liEl8.textContent = "";
     liEl9.textContent = "";
     liEl10.textContent = "";
@@ -353,16 +376,16 @@ function scoreScreen() {
 //save scores
 function saveScore(){
     var userScores=[]
-    var userScore = {
+     var userScore = {
         name: prompt("What is your name?"),
         time: secondsLeft,
     }
     userScores.push(userScore);
-    userScores = userScores.concat(JSON.parse(localStorage.getItem('userScores')||'[]'));
+    userScores = userScores.concat(JSON.parse(localStorage.getItem('userScores') || '[]'));
     console.log(userScores);
     localStorage.setItem("userScores", JSON.stringify(userScores));
     endScreen();
 }
 
-localStorage.names = JSON.stringify(userScores);
-var storedScores = JSON.parse(localStorage.userScores);
+// localStorage.names = JSON.stringify(userScores);
+// var storedScores = JSON.parse(localStorage.userScores);
