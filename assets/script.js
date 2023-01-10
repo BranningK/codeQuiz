@@ -52,7 +52,7 @@ function startQuiz(){
         console.log('Question 1 displaying');
         showChoices();
     //Shows the question's text
-        question.textContent = "Example question text";
+        question.textContent = "What is the difference between == and ===  ?";
 
     //Shows the answer boxes
         function showChoices(){
@@ -62,10 +62,10 @@ function startQuiz(){
             document.querySelector('#answerChoice3').style.display = 'flex';
             document.querySelector('#answerChoice4').style.display = 'flex';
         //Shows the user the answer choices
-            text1.textContent = "1. AAAA";
-            text2.textContent = "2. BBBB";
-            text3.textContent = "3. CCCC";
-            text4.textContent = "4. DDDD";
+            text1.textContent = "== means equals while === means does not equal";
+            text2.textContent = "=== does not exist";
+            text3.textContent = "== does not take data types into consideration";
+            text4.textContent = "== means does not equal while === means equal";
         //Event listeners for the answer boxes
             answerChoice1.addEventListener("click", checkAnswer1);
             answerChoice2.addEventListener("click", checkAnswer1);
@@ -92,7 +92,7 @@ function startQuiz(){
 
     function question2(){
         showChoices2();
-        question.textContent = "Example question2 text";
+        question.textContent = "How do you access an element with an ID of 'green'?";
 
         //Shows the answer boxes
         function showChoices2(){
@@ -102,17 +102,17 @@ function startQuiz(){
             document.querySelector('#answerChoice3').style.display = 'flex';
             document.querySelector('#answerChoice4').style.display = 'flex';
         //Shows the user the answer choices
-            text1.textContent = "1. AAAAa";
-            text2.textContent = "2. BBBBb";
-            text3.textContent = "3. CCCCc";
-            text4.textContent = "4. DDDDd";
+            text1.textContent = "document.getElementById('#green');";
+            text2.textContent = "document.getElementById(#green);";
+            text3.textContent = "document.getElementById(.green);";
+            text4.textContent = "document.getElementById('.green');";
         //Event listeners for the answer boxes
             answerChoice1.addEventListener("click", checkAnswer2);
             answerChoice2.addEventListener("click", checkAnswer2);
             answerChoice3.addEventListener("click", checkAnswer2);
             answerChoice4.addEventListener("click", checkAnswer2);
         }
-    }
+    } 
     //verifies the answer of question 2
     function checkAnswer2(event) {
         if(event.target !== answerChoice1) {
@@ -130,7 +130,7 @@ function startQuiz(){
     }
     function question3() {
         showChoices3();
-        question.textContent = "Example question3 text";
+        question.textContent = "How do you access an item called 'name' in local storage?";
 
         //Shows the answer boxes
         function showChoices3(){
@@ -140,10 +140,10 @@ function startQuiz(){
             document.querySelector('#answerChoice3').style.display = 'flex';
             document.querySelector('#answerChoice4').style.display = 'flex';
         //Shows the user the answer choices
-            text1.textContent = "1. AAAAa";
-            text2.textContent = "2. BBBBb";
-            text3.textContent = "3. CCCCc";
-            text4.textContent = "4. DDDDd";
+            text1.textContent = "localStorage.getItem(name);";
+            text2.textContent = "localStorage.getItem('name');";
+            text3.textContent = "localStorage.setItem(name);";
+            text4.textContent = "storage.getItem(name);";
         //Event listeners for the answer boxes
             answerChoice1.addEventListener("click", checkAnswer3);
             answerChoice2.addEventListener("click", checkAnswer3);
@@ -153,12 +153,11 @@ function startQuiz(){
     }
     //verifies the answer of question 3
     function checkAnswer3(event) {
-        if(event.target !== answerChoice4) {
+        if(event.target !== answerChoice2) {
             console.log("Incorrect -2 seconds ");
             secondsLeft --;
             } else {
             console.log("Correct! ");
-            //insert points to local storage
         }
         answerChoice1.removeEventListener('click', checkAnswer3);
         answerChoice2.removeEventListener('click', checkAnswer3);
@@ -168,7 +167,7 @@ function startQuiz(){
     }
     function question4(){
         showChoices4();
-        question.textContent = "Example question4 text";
+        question.textContent = "Where is the local storage data located in the chrome debugger?";
 
         //Shows the answer boxes
         function showChoices4(){
@@ -178,10 +177,10 @@ function startQuiz(){
             document.querySelector('#answerChoice3').style.display = 'flex';
             document.querySelector('#answerChoice4').style.display = 'flex';
         //Shows the user the answer choices
-            text1.textContent = "1. AAAAa";
-            text2.textContent = "2. BBBBb";
-            text3.textContent = "3. CCCCc";
-            text4.textContent = "4. DDDDd";
+            text1.textContent = "Under the performance tab";
+            text2.textContent = "Under the application tab";
+            text3.textContent = "In the console";
+            text4.textContent = "It is not possible";
         //Event listeners for the answer boxes
             answerChoice1.addEventListener("click", checkAnswer4);
             answerChoice2.addEventListener("click", checkAnswer4);
@@ -191,7 +190,7 @@ function startQuiz(){
     }
     //verifies the answer of question 4
     function checkAnswer4(event) {
-        if(event.target !== answerChoice4) {
+        if(event.target !== answerChoice2) {
             console.log("Incorrect -2 seconds ");
             secondsLeft --;
             } else {
@@ -206,7 +205,7 @@ function startQuiz(){
     }
     function question5(){
         showChoices5();
-        question.textContent = "Example question5 text";
+        question.textContent = "How do you log custom text to the console?";
 
         //Shows the answer boxes
         function showChoices5(){
@@ -216,10 +215,10 @@ function startQuiz(){
             document.querySelector('#answerChoice3').style.display = 'flex';
             document.querySelector('#answerChoice4').style.display = 'flex';
         //Shows the user the answer choices
-            text1.textContent = "1. AAAAa";
-            text2.textContent = "2. BBBBb";
-            text3.textContent = "3. CCCCc";
-            text4.textContent = "4. DDDDd";
+            text1.textContent = "console.log(insert text here);";
+            text2.textContent = "console.log 'insert text here';";
+            text3.textContent = "log.console('insert text here');";
+            text4.textContent = "console.log('insert text here');";
         //Event listeners for the answer boxes
             answerChoice1.addEventListener("click", checkAnswer5);
             answerChoice2.addEventListener("click", checkAnswer5);
@@ -297,8 +296,8 @@ function scoreScreen() {
     console.log("running scoreScreen");
 
     // Go Grab the data saved in localstorage
-   // console.log(userScores);
-   // console.log(typeof userScores);
+    // console.log(userScores);
+    // console.log(typeof userScores);
 
     var json = localStorage.getItem('userScores');
     console.log(json);
@@ -308,6 +307,15 @@ function scoreScreen() {
     console.log(jsArr);
     console.log(typeof jsArr);
 
+    jsArr.sort(function (x, y) {
+        return y.time - x.time;
+    });
+
+    // jsArr.time.sort((a, b) => b - a)
+    // sort numbers in ascending order
+    // scores.sort((a, b) => a - b);
+    
+    // console.log(scores);
     //console.log(jsArr.sort({time}))
     //console.log(Math.max(jsArr))
 
@@ -347,9 +355,9 @@ function scoreScreen() {
     olEl1.appendChild(liEl5);
     nameHeading.textContent = "Name: ";
     liEl1.textContent = jsArr[0].name;
-    liEl2.textContent = jsArr[1].name;
-    liEl3.textContent = jsArr[2].name;
-    liEl4.textContent = jsArr[3].name;
+    liEl2.textContent = jsArr[1] ? jsArr[1].name : '';
+    liEl3.textContent = jsArr[2] ? jsArr[2].name : '';
+    liEl4.textContent = jsArr[3] ? jsArr[3].name : '';
     liEl5.textContent = jsArr[4] ? jsArr[4].name : '';
     //score column
     var timeHeading = document.createElement("p");
@@ -366,12 +374,12 @@ function scoreScreen() {
     ulEl2.appendChild(liEl8);
     ulEl2.appendChild(liEl9);
     ulEl2.appendChild(liEl10);
-    timeHeading.textContent = "Time Remaining: "
-    liEl6.textContent = secondsLeft + " seconds left";
-    liEl7.textContent = jsArr[1].time + " points";
-    liEl8.textContent = "";
-    liEl9.textContent = "";
-    liEl10.textContent = "";
+    timeHeading.textContent = "Points: "
+    liEl6.textContent = jsArr[0].time;
+    liEl7.textContent = jsArr[1] ? jsArr[1].time : '';
+    liEl8.textContent = jsArr[2] ? jsArr[2].time : '';
+    liEl9.textContent = jsArr[3] ? jsArr[3].time : '';
+    liEl10.textContent = jsArr[4] ? jsArr[4].time : '';
 }
 //save scores
 function saveScore(){
@@ -386,6 +394,3 @@ function saveScore(){
     localStorage.setItem("userScores", JSON.stringify(userScores));
     endScreen();
 }
-
-// localStorage.names = JSON.stringify(userScores);
-// var storedScores = JSON.parse(localStorage.userScores);
